@@ -26,8 +26,9 @@ public class User implements Serializable, UserDetails {
 
     private String phone;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
+//    @ManyToOne
+    @ManyToOne
+    //@JoinColumn(name = "user_address_id")
     private Address userAddress;
 
     private String password;

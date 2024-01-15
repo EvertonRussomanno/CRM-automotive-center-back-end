@@ -24,7 +24,7 @@ INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_
 INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Pinça de freio Ford Fiesta', 'vwoe8745ntyow', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 9.55, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/20-big.jpg');
 INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Lanterna LED carreta Random', 'nçoyu8fgbplk', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 13.69, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/21-big.jpg');
 INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Placa retificadora alternador TITAN 24v', 'SBEVJ895YTMVW9P', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 154.1, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/22-big.jpg');
-INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url VALUES ('Regulador de tensão Bosh 253', 'E54986B73098', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 356.2, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/23-big.jpg');
+INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Regulador de tensão Bosh 253', 'E54986B73098', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 356.2, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/23-big.jpg');
 INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Lanterna 3 marias Bojuda', '5698UYMOERT', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 55.2, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/24-big.jpg');
 INSERT INTO tb_products (name, code_number, description, price, ncm_number, img_url) VALUES ('Reservatório de agua MB limpador', 'V47N8TAWEO', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.', 22.4, '123456789', 'https://raw.githubusercontent.com/devsuperior/dscatalog-resources/master/backend/img/25-big.jpg');
 
@@ -53,28 +53,38 @@ INSERT INTO tb_product_category (product_id, category_id) VALUES (21, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (22, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (23, 3);
 INSERT INTO tb_product_category (product_id, category_id) VALUES (24, 3);
-INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 3);
+INSERT INTO tb_product_category (product_id, category_id) VALUES (25, 1);
 
-INSERT INTO tb_address (address, number_house, neighborhood, city, state, country, complement, description, user, zip_code) VALUES ('Avenida Emílio Nastri', 34, 'Vla Nastri', 'Itapetnnga', 'Brasil', '', 'Próximo ao Mercado', 1, '19702901');
+INSERT INTO tb_address (address, number_house, neighborhood, city, state, country, complement, description, zip_code) VALUES ('Avenida Emílio Nastri', 34, 'Vila Nastri', 'Itapetininga', 'SP', 'Brasil', ' ', 'Próximo ao Mercado', '19702901');
+INSERT INTO tb_address (address, number_house, neighborhood, city, state, country, complement, description, zip_code) VALUES ('Rua Claudio Manuel da Costa', 222, 'Vila Osasco', 'Osasco', 'SP', 'Brasil', ' ', 'Próximo ao Pronto Socorro', '25263354');
 
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Maria', 'Brown', 'maria@gmail.com', '988888888', 1, '$2a$10$1eAKOWC8gvkZLikw01SgvOdX4vrm7J54XlJnE1HVMSMJJc7PHufHm','123456789', '4598765423', '369258', '65483219', 0, '2001-07-25', 3000.0);
-INSERT INTO tb_user (name, email, phone, password, birth_date) VALUES ('Alex', 'Green', 'alex@gmail.com', '977777777', 2, '$2a$10$1eAKOWC8gvkZLikw01SgvOdX4vrm7J54XlJnE1HVMSMJJc7PHufHm', '987654321', '2345614798', '741852', '951242367', 2, '1987-12-13', 3250.0);
+INSERT INTO tb_users (name, last_name, email, phone, user_address_id, password, cpf_number, rg_number, work_card_number, pis_number, children, birth_date, salary) VALUES ('Maria', 'Brown', 'maria@gmail.com', '988888888', 1, '$2a$10$1eAKOWC8gvkZLikw01SgvOdX4vrm7J54XlJnE1HVMSMJJc7PHufHm','123456789', '4598765423', '369258', '65483219', 0, '2001-07-25', 3000.0);
+INSERT INTO tb_users (name, last_name, email, phone, user_address_id, password, cpf_number, rg_number, work_card_number, pis_number, children, birth_date, salary) VALUES ('Alex', 'Green', 'alex@gmail.com', '977777777', 2, '$2a$10$1eAKOWC8gvkZLikw01SgvOdX4vrm7J54XlJnE1HVMSMJJc7PHufHm', '987654321', '2345614798', '741852', '951242367', 2, '1987-12-13', 3250.0);
 
-INSERT INTO tb_role (authority) VALUES ('ROLE_CLIENT');
 INSERT INTO tb_role (authority) VALUES ('ROLE_ADMIN');
+INSERT INTO tb_role (authority) VALUES ('ROLE_SELLER');
+INSERT INTO tb_role (authority) VALUES ('ROLE_RH');
+INSERT INTO tb_role (authority) VALUES ('ROLE_ADM');
+INSERT INTO tb_role (authority) VALUES ('ROLE_WORKSHOP');
+INSERT INTO tb_role (authority) VALUES ('ROLE_BUYER');
 
 INSERT INTO tb_user_role (user_id, role_id) VALUES (1,1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2,1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (2,2);
 
-INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-25T13:00:00Z', 1, 1);
-INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-29T15:50:00Z', 3, 2);
-INSERT INTO tb_order (moment, status, client_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-08-03T14:20:00Z', 0, 1);
+INSERT INTO tb_order (moment_initial, moment_final, status, user_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-25T13:00:00Z', TIMESTAMP WITH TIME ZONE '2022-07-25T18:00:00Z', 1, 1);
+INSERT INTO tb_order (moment_initial, moment_final, status, user_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-07-29T15:50:00Z', TIMESTAMP WITH TIME ZONE '2022-07-29T16:50:00Z', 3, 2);
+INSERT INTO tb_order (moment_initial, moment_final, status, user_id) VALUES (TIMESTAMP WITH TIME ZONE '2022-08-03T14:20:00Z', TIMESTAMP WITH TIME ZONE '2022-07-07T15:50:00Z', 0, 1);
 
-INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 1, 2, 90.5);
-INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (1, 3, 1, 1250.0);
-INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (2, 3, 1, 1250.0);
-INSERT INTO tb_order_item (order_id, product_id, quantity, price) VALUES (3, 1, 1, 90.5);
+INSERT INTO tb_executed_service(description, price, observations) VALUES ('Revisão de motor de partida', 200.00, 'Garanta 3 meses');
+INSERT INTO tb_executed_service(description, price, observations) VALUES ('Reparo no chicote princpal', 1000.00, 'Garanta 1 mes');
+INSERT INTO tb_executed_service(description, price, observations) VALUES ('Revisão do alternador', 100.00, 'Garanta 3 meses');
+INSERT INTO tb_executed_service(description, price, observations) VALUES ('Substituição de lanterna da carreta', 60.00, '');
 
-INSERT INTO tb_payment (order_id, moment) VALUES (1, TIMESTAMP WITH TIME ZONE '2022-07-25T15:00:00Z');
-INSERT INTO tb_payment (order_id, moment) VALUES (2, TIMESTAMP WITH TIME ZONE '2022-07-30T11:00:00Z');
+INSERT INTO tb_order_item (order_id, product_id, executed_service_id, quantity, price) VALUES (1, 1, 1, 2, 90.5);
+INSERT INTO tb_order_item (order_id, product_id, executed_service_id, quantity, price) VALUES (1, 3, 2, 1, 1250.0);
+INSERT INTO tb_order_item (order_id, product_id, executed_service_id, quantity, price) VALUES (2, 5, 3, 1, 1250.0);
+INSERT INTO tb_order_item (order_id, product_id, executed_service_id, quantity, price) VALUES (3, 1, 4, 1, 90.5);
+
+INSERT INTO tb_payment (order_id, moment, payment_type) VALUES (1, TIMESTAMP WITH TIME ZONE '2022-07-25T15:00:00Z', 2);
+INSERT INTO tb_payment (order_id, moment, payment_type) VALUES (2, TIMESTAMP WITH TIME ZONE '2022-07-30T11:00:00Z', 1);

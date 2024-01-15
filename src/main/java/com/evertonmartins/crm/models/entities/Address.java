@@ -3,6 +3,8 @@ package com.evertonmartins.crm.models.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -26,8 +28,10 @@ public class Address implements Serializable {
     private String description;
     private String zipCode;
 
-    @OneToOne(mappedBy = "userAddress")
-    private User user;
+    @OneToMany(mappedBy = "userAddress", cascade = CascadeType.ALL)
+//    @JoinColumn(name="address_id")
+    //@OneToMany(mappedBy = "userAddress")
+    private List<User> users = new ArrayList<>();
 
     public Address() {
     }
@@ -35,7 +39,7 @@ public class Address implements Serializable {
     public Address(Long id, String address, Integer numberHouse,
                    String neighborhood, String city, String state,
                    String country, String complement, String description,
-                   User user, String zipCode) {
+                   String zipCode) {
         this.id = id;
         this.address = address;
         this.numberHouse = numberHouse;
@@ -45,7 +49,6 @@ public class Address implements Serializable {
         this.country = country;
         this.complement = complement;
         this.description = description;
-        this.user = user;
         this.zipCode = zipCode;
     }
 
@@ -121,20 +124,16 @@ public class Address implements Serializable {
         this.description = description;
     }
 
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
     public String getZipCode() {
         return zipCode;
     }
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public void setUsers(User user) {
+        users.add(user);
     }
 
     @Override
@@ -164,7 +163,6 @@ public class Address implements Serializable {
                 ", country='" + country + '\'' +
                 ", complement='" + complement + '\'' +
                 ", description='" + description + '\'' +
-                ", user=" + user +
                 ", zipCode=" + zipCode +
                 '}';
     }

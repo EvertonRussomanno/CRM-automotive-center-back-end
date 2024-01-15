@@ -29,9 +29,10 @@ public class Payment implements Serializable {
 
     public Payment(){}
 
-    public Payment(Long id, Instant moment, Order order) {
+    public Payment(Long id, Instant moment, PaymentType paymentType, Order order) {
         this.id = id;
         this.moment = moment;
+        this.paymentType = paymentType;
         this.order = order;
     }
 
@@ -49,6 +50,14 @@ public class Payment implements Serializable {
 
     public void setMoment(Instant moment) {
         this.moment = moment;
+    }
+
+    public PaymentType getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(PaymentType paymentType) {
+        this.paymentType = paymentType;
     }
 
     public Order getOrder() {
