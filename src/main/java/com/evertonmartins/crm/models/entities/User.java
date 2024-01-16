@@ -69,7 +69,7 @@ public class User implements Serializable, UserDetails {
         this.pisNumber = pisNumber;
         this.children = children;
         this.birthDate = birthDate;
-        this.salary = salary;
+        this.salary = new BigDecimal(String.valueOf(salary));
     }
 
     public Long getId() {

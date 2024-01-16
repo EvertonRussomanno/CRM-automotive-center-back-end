@@ -4,7 +4,6 @@ import com.evertonmartins.crm.dto.ProductDTO;
 import com.evertonmartins.crm.dto.ProductMinDTO;
 import com.evertonmartins.crm.services.ProductService;
 import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.Parameter;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -17,7 +16,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 
 @RestController
-@RequestMapping(value = "/products")
+@RequestMapping(value = "crm/v1/products")
 public class ProductController {
 
     @Autowired
