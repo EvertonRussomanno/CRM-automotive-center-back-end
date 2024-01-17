@@ -19,30 +19,42 @@ public class ProductDTO {
     @NotBlank(message = "Campo Obrigatório!")
     private String name;
 
+    private String codeNumber;
+
     @Size(min = 10, message = "Descrição deve ter pelo menos 10 caracteres!")
     @NotBlank(message = "Campo Obrigatório!")
     private String description;
 
     @Positive(message = "Preço deve ser positivo")
-    private BigDecimal price;
+    private BigDecimal costPrice;
+
+    private BigDecimal finalPrice;
+
+    private String ncmNumber;
 
     private String imgUrl;
 
-    @NotEmpty(message = "Deve ter ao menos uma catrgoria.")
+    @NotEmpty(message = "Deve ter ao menos uma catergoria.")
     private List<CategoryDTO> categories = new ArrayList<>();
-    public ProductDTO(Long id, String name, String description, BigDecimal price, String imgUrl) {
+    public ProductDTO(Long id, String name, String codeNumber, String description, BigDecimal costPrice, BigDecimal finalPrice, String ncmNumber, String imgUrl) {
         this.id = id;
         this.name = name;
+        this.codeNumber = codeNumber;
         this.description = description;
-        this.price = price;
+        this.costPrice = costPrice;
+        this.finalPrice = finalPrice;
+        this.ncmNumber = ncmNumber;
         this.imgUrl = imgUrl;
     }
 
     public ProductDTO(Product entity) {
         id = entity.getId();
         name = entity.getName();
+        codeNumber = entity.getCodeNumber();
         description = entity.getDescription();
-        price = entity.getPrice();
+        costPrice = entity.getCostPrice();
+        finalPrice = entity.getFinalPrice();
+        ncmNumber = entity.getNcmNumber();
         imgUrl = entity.getImgUrl();
         for(Category cat : entity.getCategories()){
             categories.add(new CategoryDTO(cat));
@@ -57,12 +69,24 @@ public class ProductDTO {
         return name;
     }
 
+    public String getCodeNumber() {
+        return codeNumber;
+    }
+
     public String getDescription() {
         return description;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getCostPrice() {
+        return costPrice;
+    }
+
+    public BigDecimal getFinalPrice() {
+        return finalPrice;
+    }
+
+    public String getNcmNumber() {
+        return ncmNumber;
     }
 
     public String getImgUrl() {

@@ -6,6 +6,7 @@ import com.evertonmartins.crm.dto.CategoryDTO;
 import com.evertonmartins.crm.dto.ProductDTO;
 import com.evertonmartins.crm.models.entities.Category;
 import com.evertonmartins.crm.repositories.ProductRepository;
+import com.evertonmartins.crm.services.ProductFinalPriceGenerate;
 import com.evertonmartins.crm.services.ProductService;
 import com.evertonmartins.crm.services.exceptions.DatabaseException;
 import com.evertonmartins.crm.services.exceptions.ResourceNotFoundException;
@@ -18,11 +19,16 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.math.BigDecimal;
+
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private ProductRepository productRepository;
+
+    @Autowired
+    private ProductFinalPriceGenerate productFinalPriceGenerate;
 
     @Override
     @Transactional(readOnly = true)
@@ -43,6 +49,7 @@ public class ProductServiceImpl implements ProductService {
     public ProductDTO insert(ProductDTO productDTO) {
         Product entity = new Product();
         copyDtoToEntity(productDTO, entity);
+        entity.setFinalPrice(productFinalPriceGenerate.finalPriceProfit(entity.getCostPrice(), new BigDecimal(0.5)));
         productRepository.save(entity);
         return new ProductDTO(entity);
     }
@@ -76,10 +83,12 @@ public class ProductServiceImpl implements ProductService {
 
     private void copyDtoToEntity(ProductDTO productDTO, Product entity) {
         entity.setName(productDTO.getName());
+        entity.setCodeNumber(productDTO.getCodeNumber());
         entity.setDescription(productDTO.getDescription());
-        entity.setPrice(productDTO.getPrice());
+        entity.setCostPrice(productDTO.getCostPrice());
+        entity.setFinalPrice(productDTO.getFinalPrice());
+        entity.setNcmNumber(productDTO.getNcmNumber());
         entity.setImgUrl(productDTO.getImgUrl());
-
         entity.getCategories().clear();
         for (CategoryDTO catDTO : productDTO.getCategories()){
             Category cat = new Category();

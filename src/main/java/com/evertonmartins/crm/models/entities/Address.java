@@ -29,8 +29,6 @@ public class Address implements Serializable {
     private String zipCode;
 
     @OneToMany(mappedBy = "userAddress", cascade = CascadeType.ALL)
-//    @JoinColumn(name="address_id")
-    //@OneToMany(mappedBy = "userAddress")
     private List<User> users = new ArrayList<>();
 
     public Address() {

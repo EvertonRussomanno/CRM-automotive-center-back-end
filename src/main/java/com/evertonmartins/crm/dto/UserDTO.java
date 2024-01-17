@@ -1,29 +1,27 @@
 package com.evertonmartins.crm.dto;
 
-import com.evertonmartins.crm.models.entities.Address;
 import com.evertonmartins.crm.models.entities.User;
 import org.springframework.security.core.GrantedAuthority;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class UserDTO{
 
-        private Long id;
-        private String name;
-        private String lastName;
-        private String email;
-        private String phone;
-        private Address userAddress;
-        private String cpfNumber;
-        private String rgNumber;
-        private String workCardNumber;
-        private String pisNumber;
-        private Integer children;
-        private String birthDate;
-        private BigDecimal salary;
+    private Long id;
+    private String name;
+    private String lastName;
+    private String email;
+    private String phone;
+    private AddressDTO userAddressDTO;
+    private String cpfNumber;
+    private String rgNumber;
+    private String workCardNumber;
+    private String pisNumber;
+    private Integer children;
+    private String birthDate;
+    private BigDecimal salary;
 
     private static List<String> roles = new ArrayList<>();
 
@@ -33,7 +31,13 @@ public class UserDTO{
         lastName = entity.getLastName();
         email = entity.getEmail();
         phone = entity.getPhone();
-        userAddress = entity.getUserAddress();
+
+        userAddressDTO = new AddressDTO(entity.getUserAddress().getId(),
+                entity.getUserAddress().getAddress(), entity.getUserAddress().getNeighborhood(),
+                entity.getUserAddress().getCity(), entity.getUserAddress().getState(),
+                entity.getUserAddress().getCountry(), entity.getUserAddress().getComplement(),
+                entity.getUserAddress().getDescription(), entity.getUserAddress().getZipCode());
+
         cpfNumber = entity.getCpfNumber();
         rgNumber = entity.getRgNumber();
         workCardNumber = entity.getWorkCardNumber();
@@ -67,8 +71,8 @@ public class UserDTO{
         return phone;
     }
 
-    public Address getUserAddress() {
-        return userAddress;
+    public AddressDTO getUserAddressDTO() {
+        return userAddressDTO;
     }
 
     public String getCpfNumber() {

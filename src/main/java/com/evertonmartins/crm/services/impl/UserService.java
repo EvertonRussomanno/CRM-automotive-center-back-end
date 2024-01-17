@@ -1,9 +1,9 @@
 package com.evertonmartins.crm.services.impl;
 
-
+import com.evertonmartins.crm.dto.AddressMinDTO;
+import com.evertonmartins.crm.dto.UserMinDTO;
 import com.evertonmartins.crm.projections.UserDetailsProjection;
 import com.evertonmartins.crm.repositories.UserRepository;
-import com.evertonmartins.crm.dto.UserDTO;
 import com.evertonmartins.crm.models.entities.Role;
 import com.evertonmartins.crm.models.entities.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +54,17 @@ public class UserService implements UserDetailsService {
         }
     }
     @Transactional(readOnly = true)
-    public UserDTO getMe(){
+    public UserMinDTO getMe(){
         User user = authenticated();
-        return new UserDTO(user);
+        return ConvertUserToMinDTO(user);
     }
+
+    private UserMinDTO ConvertUserToMinDTO(User user) {
+        var userMinDTO =
+                new UserMinDTO(user.getId(), user.getName(), user.getLastName(),
+                new AddressMinDTO(user.getUserAddress().getCity(),
+                        user.getUserAddress().getCountry()));
+        return  userMinDTO;
+    }
+
 }

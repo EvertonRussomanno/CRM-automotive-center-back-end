@@ -18,16 +18,16 @@ public class OrderItem implements Serializable {
     private OrderItemPK id = new OrderItemPK();
 
     private Integer quantity;
-    private BigDecimal price;
+    private BigDecimal finalPrice;
 
     public OrderItem(){}
 
-    public OrderItem(Order order, Product product, ExecutedService executedService, Integer quantity, BigDecimal price) {
+    public OrderItem(Order order, Product product, ExecutedService executedService, Integer quantity, BigDecimal finalPrice) {
         id.setOrder(order);
         id.setProduct(product);
         id.setExecutedService(executedService);
         this.quantity = quantity;
-        this.price = price;
+        this.finalPrice = finalPrice;
     }
 
     public Order getOrder(){
@@ -62,12 +62,12 @@ public class OrderItem implements Serializable {
         this.quantity = quantity;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getFinalPrice() {
+        return finalPrice;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setFinalPrice(BigDecimal finalPrice) {
+        this.finalPrice = finalPrice;
     }
 
     @Override

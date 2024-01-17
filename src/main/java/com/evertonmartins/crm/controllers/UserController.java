@@ -1,6 +1,6 @@
 package com.evertonmartins.crm.controllers;
 
-import com.evertonmartins.crm.dto.UserDTO;
+import com.evertonmartins.crm.dto.UserMinDTO;
 import com.evertonmartins.crm.services.impl.UserService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +20,8 @@ public class UserController {
     @PreAuthorize("hasAnyRole('ROLE_ADMIN', 'ROLE_SELLER', 'ROLE_RH', 'ROLE_ADM', 'ROLE_WORKSHOP', 'ROLE_BUYER')")
     @GetMapping(value = "/me")
     @Operation(summary = "Get logged user")
-    public ResponseEntity<UserDTO> getMe(){
-        UserDTO userDTO = userService.getMe();
-        return ResponseEntity.ok(userDTO);
+    public ResponseEntity<UserMinDTO> getMe(){
+        UserMinDTO userMinDTO = userService.getMe();
+        return ResponseEntity.ok(userMinDTO);
     }
 }

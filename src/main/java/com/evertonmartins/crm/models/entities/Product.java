@@ -23,7 +23,9 @@ public class Product implements Serializable {
     @Column(columnDefinition = "TEXT")
     private String description;
 
-    private BigDecimal price;
+    private BigDecimal costPrice;
+
+    private BigDecimal finalPrice;
 
     private String ncmNumber;
 
@@ -41,12 +43,13 @@ public class Product implements Serializable {
     public Product() {
     }
 
-    public Product(Long id, String name, String codeNumber, String description, BigDecimal price, String ncmNumber, String imgUrl) {
+    public Product(Long id, String name, String codeNumber, String description, BigDecimal costPrice, BigDecimal finalPrice, String ncmNumber, String imgUrl) {
         this.id = id;
         this.name = name;
         this.codeNumber = codeNumber;
         this.description = description;
-        this.price = price;
+        this.costPrice = costPrice;
+        this.finalPrice = finalPrice;
         this.ncmNumber = ncmNumber;
         this.imgUrl = imgUrl;
     }
@@ -83,12 +86,20 @@ public class Product implements Serializable {
         this.description = description;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public BigDecimal getCostPrice() {
+        return costPrice;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setCostPrice(BigDecimal costPrice) {
+        this.costPrice = costPrice;
+    }
+
+    public BigDecimal getFinalPrice() {
+        return finalPrice;
+    }
+
+    public void setFinalPrice(BigDecimal finalPrice) {
+        this.finalPrice = finalPrice;
     }
 
     public String getNcmNumber() {
@@ -141,7 +152,8 @@ public class Product implements Serializable {
                 ", name='" + name + '\'' +
                 ", codeNumber='" + codeNumber + '\'' +
                 ", description='" + description + '\'' +
-                ", price=" + price +
+                ", costPrice=" + costPrice +
+                ", finalPrice=" + finalPrice +
                 ", ncmNumber='" + ncmNumber + '\'' +
                 ", imgUrl='" + imgUrl + '\'' +
                 ", categories=" + categories +

@@ -26,9 +26,7 @@ public class User implements Serializable, UserDetails {
 
     private String phone;
 
-//    @ManyToOne
     @ManyToOne
-    //@JoinColumn(name = "user_address_id")
     private Address userAddress;
 
     private String password;
